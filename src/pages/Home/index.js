@@ -1,15 +1,18 @@
 import React from "react";
 import { useState, useContext } from "react";
 import {Link} from 'react-router-dom'
-  
-// import translations from "./translations.json";
 
+// import { I18n } from "i18n-js";
+// import translations from "./translations.json";
+// // import { I18n } from 'i18n-js';
+//   const i18n = new I18n(translations);
 
 
 import "./style.css";
 import Footer from "../../components/Footer";
 function Home() {
-  // const i18n = new I18n(translations)
+
+
 
   const [textBtn, setTextBtn] = useState("Đăng nhập");
   //state heading
