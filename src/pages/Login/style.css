@@ -1,0 +1,81 @@
+.none {
+    border: none;
+  }
+  
+  .login-content {
+    right: 0;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+  }
+  .fh{
+    height: 100vh;
+  }
+  .form-container {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 32%;
+    height: 660px;
+    border-radius: 3px;
+  }
+  .form-body {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 60px;
+  }
+  .user-name,
+  .password {
+    background-color: rgb(51, 51, 51);
+    margin-top: 16px;
+    padding: 12px 20px 12px 20px;
+    font-size: 16px;
+    width: 90%;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+  .btn-login {
+    width: 103%;
+    margin: 60px 0px 12px;
+    font-size: 16px;
+    padding: 16px 20px;
+    background: #e50914;
+    color: white;
+    font-weight: 600;
+  }
+  .checkbox {
+    background-color: #737373;
+    font-size: 20px;
+    margin: 0;
+  }
+  .remember {
+    color: #737373;
+  }
+  .login-click-help {
+    float: right;
+    text-decoration: none;
+    color: #737373;
+  }
+  .login-other {
+    margin-top: 80px;
+  }
+  .login-signup-now {
+    color: #737373;
+  }
+  .sign-up {
+    text-decoration: none;
+    color: white;
+  }
+  .recaptcha-term-of-user {
+    color: #737373;
+    font-size: 13px;
+    margin-top: 16px;
+  }
+  .footer-login{
+      width:100%;
+      padding: 30px 0;
+      background: rgba(0,0,0,.5);
+      z-index: 4;
+  }
