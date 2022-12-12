@@ -1,23 +1,47 @@
-import './App.css';
-// import { useState } from "react";
-import ThemeContextProvider from './context/ThemeContext';
-// import SearchBar from './components/SearchBar/SearchBar';
-// import FilmList from './components/FilmList/FilmList';
-import { Route, Routes } from 'react-router-dom';
-// import FilmSeachList from './components/FilmSearchList/FilmSearchList';
-import Home from './pages/Home';
-import Login from './pages/Login';
+import React, { useContext } from "react";
+import "./styles.css";
 
-function App() {
+import LandingSection from "containers/LandingSection/LandingSection";
+import Login from "containers/Login/Login";
+import Browse from 'containers/Browse/Browse'
+import { Switch, Route, Redirect } from "react-router-dom";
+import { AuthenticationContext } from 'context/Authentication'
+import NotFoundPage from 'components/StaticPages/NotFoundPage/NotFoundPage'
+import ViewMovie from "containers/ViewMovie/ViewMovie";
 
-return (
+export default function App() {
+  const authContext = useContext(AuthenticationContext)
+
+  const checkAuthAndSetBrowseComponent = (propsObject) => {
+    return (authContext.authenticated || localStorage.getItem('profileSelected')) ?
+      <Browse {...propsObject} /> :
+      <Redirect to="/login" />
+  }
+
+  return (
     <div className="App">
-     <Routes>
-      <Route path='/vn' element = {<Home></Home>}></Route>
-      <Route path='/login' element= {<Login></Login>}></Route>
-     </Routes>
-    </div>
+      <Switch>
+        <Route exact path="/browse" render={() => checkAuthAndSetBrowseComponent({ route: '/browse' })}>
+        </Route>
+        <Route exact path="/browse/tv" render={() => checkAuthAndSetBrowseComponent({ route: '/browse/tv' })}>
+        </Route>
+        <Route exact path="/browse/movies" render={() => checkAuthAndSetBrowseComponent({ route: '/browse/movies' })}>
+        </Route>
+        <Route exact path="/browse/latest" render={() => checkAuthAndSetBrowseComponent({ route: '/browse/latest' })}>
+        </Route>
+        <Route exact path="/browse/list" render={() => checkAuthAndSetBrowseComponent({ route: '/browse/list' })}>
+        </Route>
+        <Route exact path="/search" render={() => checkAuthAndSetBrowseComponent({ route: '/search' })}>
+        </Route>
+        <Route exact path="/login" component={Login}>
+        </Route>
+        <Route exact path="/" component={LandingSection}>
+        </Route>
+        <Route exact path="/view" component={ViewMovie}>
+        </Route>
+        <Route exact component={NotFoundPage}>
+        </Route>
+      </Switch>
+    </div >
   );
 }
-
-export default App;
