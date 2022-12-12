@@ -15,7 +15,9 @@
   text-align: center;
   color: #fff;
 }
-
+.NavBar {
+  height: 60px;
+}
 .landingTexts > * {
   margin-top: 15px;
 }
@@ -44,11 +46,19 @@
   border: none;
 }
 
+.animation{
+  position: absolute;
+  top: 126%;
+  left: 57.5%;
+  width: 22%;
+ 
+}
 .tv-section {
   height: 410px;
   background-color: black;
   border-bottom: 8px solid #333;
   color: #fff;
+  padding: 5% 8%;
 }
 
 .tv-inner, .responsive-tv-inner {
@@ -62,6 +72,7 @@
 
 .tv-section img {
   width: 70%;
+  z-index: 2;
 }
 
 .faq-section {
@@ -90,7 +101,9 @@
 @media (min-width: 600px) {
   .landingSection {
     height: 620px;
+  
   }
+
 
   .landingTexts {
     width: 70%;
@@ -107,7 +120,9 @@
 
   .tv-section img {
     width: 45%;
+    z-index: 2;
   }
+
 }
 
 @media(min-width: 950px) {
@@ -121,6 +136,7 @@
     .ButtonSticker button {
         margin-top: 0;
     }
+
 }
 
 @media(min-width: 1199px) {
@@ -128,6 +144,7 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
 }
 
 @media(min-width: 1650px) {
@@ -140,4 +157,22 @@
     .tv-section img {
         width: 35%;
     }      
+
 }
+/* table */
+@media screen and (min-width:740px) and (max-width:1023px) {
+  .animation{
+    position: absolute;
+    top: 122%;
+    left: 39%;
+    width: 24%;
+  }
+}
+@media  screen and (min-width:340px) and (max-width:739px){
+  .animation{
+    width: 34%;
+    top: 133.5%;
+    left: 33%;
+}
+  }
+
