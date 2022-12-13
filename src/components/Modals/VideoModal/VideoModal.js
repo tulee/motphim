@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './VideoModal.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,7 +26,7 @@ const overlayStyle = {
 const VideoModal = props => {
     const { videoDetailModal, closeModalHandler, videoInfo } = props
     const {myList, setMyList} = useContext(AuthenticationContext)
-    const [added, setAdded] = useState(false)
+    const [added, setAdded] = useState()
     const [buttonHovered, onButtonHoverHandler] = useHoverStyleButton({
         'playButton': true,
         'plusButton': true
@@ -38,7 +38,7 @@ const VideoModal = props => {
         vote_average, seasons, runtime,
         backdrop_path, poster_path, title, name,
         release_date, first_air_date,
-        overview
+        overview,id
     } = videoInfo
 
     const voteAverage = vote_average * 10
@@ -51,21 +51,32 @@ const VideoModal = props => {
     }
 
     function handleAddMyList(){
-        if(added==false){
-            setMyList([...myList,videoInfo])
-            setAdded(true)
-        }else{
-            let newList = myList
-            newList.splice(newList.findIndex(movie => movie.title == title))
+        let newList = myList
+        let movieId = newList.findIndex(movie => movie.id == id)
+        console.log(movieId);
+        if(movieId >=0){
+            newList.splice(movieId,1)
             setMyList(newList)
             setAdded(false)
+        }else{
+            setMyList([...myList,videoInfo])
+            setAdded(true)
         }
-
     }
 
     function handleClickPlay(){
         history.push('/view')
     }
+
+    useEffect(()=>{
+        let newList = myList
+        let movieId = newList.findIndex(movie => movie.id == id) 
+        if(movieId >= 0){
+            setAdded(true)
+        }else{
+            setAdded(false)
+        }
+    },[])
 
     return (
         <Modal
