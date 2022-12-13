@@ -31,7 +31,7 @@ describe('<Search /> and <Dropdown />', () => {
                 .trigger('mouseover')
                 .get('.FloatingBox')
                 .find('span')
-                .contains('Sign out of Netflix')
+                .contains('Sign out of THT Film')
                 .click()
                 .then(() => {
                     expect(localStorage.getItem('profileSelected')).to.not.exist

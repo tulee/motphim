@@ -48,7 +48,7 @@ const UseNavbar = () => {
             <span style={{ borderBottom: '1px solid grey', marginBottom: '7px' }}>Manage Profiles</span>
             <span>Account</span>
             <span>Help Center</span>
-            <span onClick={logoutHandler}>Sign out of Netflix</span>
+            <span onClick={logoutHandler}>Sign out of THT Film</span>
         </>
     )
 

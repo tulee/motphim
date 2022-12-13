@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './VideoModal.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,6 +26,7 @@ const overlayStyle = {
 const VideoModal = props => {
     const { videoDetailModal, closeModalHandler, videoInfo } = props
     const {myList, setMyList} = useContext(AuthenticationContext)
+    const [added, setAdded] = useState(false)
     const [buttonHovered, onButtonHoverHandler] = useHoverStyleButton({
         'playButton': true,
         'plusButton': true
@@ -51,6 +52,7 @@ const VideoModal = props => {
 
     function handleAddMyList(){
         setMyList([...myList,videoInfo])
+        setAdded(!added)
     }
 
     function handleClickPlay(){
@@ -107,7 +109,7 @@ const VideoModal = props => {
                             hoverStatus={buttonHovered['plusButton']}
                             handleClickPlay={handleAddMyList}    
                         >
-                            My List
+                            {!added?"My List":"Added"}
                         </Button>
                     </div>
                 </div>
