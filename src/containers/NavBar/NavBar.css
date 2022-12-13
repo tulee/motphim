@@ -22,6 +22,7 @@
 .NavBar img {
   width: 138px;
   height: 36px;
+  opacity: 0.9;
 }
 
 .inactive {
