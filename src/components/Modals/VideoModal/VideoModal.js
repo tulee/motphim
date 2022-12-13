@@ -51,8 +51,16 @@ const VideoModal = props => {
     }
 
     function handleAddMyList(){
-        setMyList([...myList,videoInfo])
-        setAdded(!added)
+        if(added==false){
+            setMyList([...myList,videoInfo])
+            setAdded(true)
+        }else{
+            let newList = myList
+            newList.splice(newList.findIndex(movie => movie.title == title))
+            setMyList(newList)
+            setAdded(false)
+        }
+
     }
 
     function handleClickPlay(){
