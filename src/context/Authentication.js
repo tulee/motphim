@@ -9,6 +9,8 @@ export const AuthenticationContext = React.createContext({
 const AuthenticationContextProvider = (props) => {
     const [authenticated, setAuthenticated] = useState(false)
 
+    const [myList, setMyList] = useState([])
+
     const loginHandler = () => {
         setAuthenticated(true)
     }
@@ -20,7 +22,9 @@ const AuthenticationContextProvider = (props) => {
     return (
         <AuthenticationContext.Provider value={{
             authenticated: authenticated, login: loginHandler, 
-            logout: logoutHandler
+            logout: logoutHandler,
+            myList: myList,
+            setMyList:setMyList
         }}>
             {props.children}
         </AuthenticationContext.Provider>

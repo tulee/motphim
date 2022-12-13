@@ -1,6 +1,7 @@
 .VideoCard {
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     height: 100%;
     width: 100%;
@@ -8,18 +9,27 @@
 
 .VideoCard:hover .VideoInfo {
     display: block;
+    
 }
 
 .NetflixOriginalCard:hover .VideoInfo {
     display: block;
+    
 }
+
 
 .VideoInfo {
     display: none;
-    padding: 10px;
+    padding: 30px;
     margin-top: 15px;
     font-weight: 400;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5)
 }
+
 
 .VideoInfo h6 {
     margin: 0;

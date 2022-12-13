@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './VideoModal.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,6 +8,8 @@ import { getSeasonsOrMovieLength } from 'utils/time'
 import { faPlay, faPlus } from '@fortawesome/free-solid-svg-icons'
 import Button from 'components/UI/Button/Button'
 import useHoverStyleButton from 'hooks/useHoverStyleButton'
+import { useHistory } from 'react-router-dom'
+import { AuthenticationContext } from 'context/Authentication'
 
 
 if (process.env.NODE_ENV !== 'test') {
@@ -23,10 +25,13 @@ const overlayStyle = {
 
 const VideoModal = props => {
     const { videoDetailModal, closeModalHandler, videoInfo } = props
+    const {myList, setMyList} = useContext(AuthenticationContext)
     const [buttonHovered, onButtonHoverHandler] = useHoverStyleButton({
         'playButton': true,
         'plusButton': true
     })
+
+    const history = useHistory()
 
     const {
         vote_average, seasons, runtime,
@@ -42,6 +47,14 @@ const VideoModal = props => {
     const styles = {
         backgroundImage: `url(https://image.tmdb.org/t/p/original/${backdrop_path || poster_path}`,
         backgroundSize: 'cover'
+    }
+
+    function handleAddMyList(){
+        setMyList([...myList,videoInfo])
+    }
+
+    function handleClickPlay(){
+        history.push('/view')
     }
 
     return (
@@ -76,7 +89,9 @@ const VideoModal = props => {
                             image
                             icon={faPlay}
                             onButtonHover={() => onButtonHoverHandler('playButton')}
-                            hoverStatus={buttonHovered['playButton']}>
+                            hoverStatus={buttonHovered['playButton']}
+                            handleClickPlay={handleClickPlay}
+                        >
                             Play
                         </Button>
 
@@ -89,7 +104,9 @@ const VideoModal = props => {
                             image
                             icon={faPlus}
                             onButtonHover={() => onButtonHoverHandler('plusButton')}
-                            hoverStatus={buttonHovered['plusButton']}>
+                            hoverStatus={buttonHovered['plusButton']}
+                            handleClickPlay={handleAddMyList}    
+                        >
                             My List
                         </Button>
                     </div>
