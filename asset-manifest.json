@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/deploy-github/static/css/main.3405e82e.css",
-    "main.js": "/deploy-github/static/js/main.0f5fd66d.js",
-    "static/media/video.mp4": "/deploy-github/static/media/video.b1d78127cc06acddb79d.mp4",
-    "static/media/landingPage.jpg": "/deploy-github/static/media/landingPage.da030728e333db2b7615.jpg",
-    "static/media/profile.jpg": "/deploy-github/static/media/profile.3bb5cb15fa5735ceca1d.jpg",
-    "static/media/normal.jpg": "/deploy-github/static/media/normal.b36331ae5ea04176bb23.jpg",
-    "static/media/sintel-de.vtt": "/deploy-github/static/media/sintel-de.fe25e72e558271035cdd.vtt",
-    "static/media/sintel-en.vtt": "/deploy-github/static/media/sintel-en.d92e0d588a309f393de0.vtt",
-    "static/media/sintel-es.vtt": "/deploy-github/static/media/sintel-es.9d8b248f2584ec078af2.vtt",
-    "index.html": "/deploy-github/index.html",
-    "main.3405e82e.css.map": "/deploy-github/static/css/main.3405e82e.css.map",
-    "main.0f5fd66d.js.map": "/deploy-github/static/js/main.0f5fd66d.js.map"
+    "main.css": "/motphim/static/css/main.3405e82e.css",
+    "main.js": "/motphim/static/js/main.9099b16b.js",
+    "static/media/video.mp4": "/motphim/static/media/video.b1d78127cc06acddb79d.mp4",
+    "static/media/landingPage.jpg": "/motphim/static/media/landingPage.da030728e333db2b7615.jpg",
+    "static/media/profile.jpg": "/motphim/static/media/profile.3bb5cb15fa5735ceca1d.jpg",
+    "static/media/normal.jpg": "/motphim/static/media/normal.b36331ae5ea04176bb23.jpg",
+    "static/media/sintel-de.vtt": "/motphim/static/media/sintel-de.fe25e72e558271035cdd.vtt",
+    "static/media/sintel-en.vtt": "/motphim/static/media/sintel-en.d92e0d588a309f393de0.vtt",
+    "static/media/sintel-es.vtt": "/motphim/static/media/sintel-es.9d8b248f2584ec078af2.vtt",
+    "index.html": "/motphim/index.html",
+    "main.3405e82e.css.map": "/motphim/static/css/main.3405e82e.css.map",
+    "main.9099b16b.js.map": "/motphim/static/js/main.9099b16b.js.map"
   },
   "entrypoints": [
     "static/css/main.3405e82e.css",
-    "static/js/main.0f5fd66d.js"
+    "static/js/main.9099b16b.js"
   ]
 }
