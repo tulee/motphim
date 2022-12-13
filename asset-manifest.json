@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/motphim/static/css/main.3405e82e.css",
-    "main.js": "/motphim/static/js/main.e726baa4.js",
+    "main.js": "/motphim/static/js/main.3439151a.js",
     "static/media/video.mp4": "/motphim/static/media/video.b1d78127cc06acddb79d.mp4",
     "static/media/landingPage.jpg": "/motphim/static/media/landingPage.da030728e333db2b7615.jpg",
     "static/media/profile.jpg": "/motphim/static/media/profile.3bb5cb15fa5735ceca1d.jpg",
@@ -11,10 +11,10 @@
     "static/media/sintel-es.vtt": "/motphim/static/media/sintel-es.9d8b248f2584ec078af2.vtt",
     "index.html": "/motphim/index.html",
     "main.3405e82e.css.map": "/motphim/static/css/main.3405e82e.css.map",
-    "main.e726baa4.js.map": "/motphim/static/js/main.e726baa4.js.map"
+    "main.3439151a.js.map": "/motphim/static/js/main.3439151a.js.map"
   },
   "entrypoints": [
     "static/css/main.3405e82e.css",
-    "static/js/main.e726baa4.js"
+    "static/js/main.3439151a.js"
   ]
 }
